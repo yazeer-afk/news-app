@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import cron from 'node-cron'
 import 'express-async-errors'
 import cors from 'cors'
+import helmet from 'helmet'
 import { errorHandlerMiddleware } from './middleware/error-handler'
 import { notFound } from './middleware/not-found'
 import { connectDB } from './db/db-connect'
@@ -13,6 +14,7 @@ const app = express()
 //Middleware
 app.use(json())
 app.use(cors())
+app.use(helmet())
 
 const port = process.env.PORT || 5000
 
