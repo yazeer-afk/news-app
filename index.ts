@@ -13,16 +13,14 @@ app.use(json())
 
 const port = process.env.PORT || 5000
 
-app.get('/', (_, res) => {
-  res.status(200).send("News API")
-})
-
-cron.schedule('* * * * * *', () => {
+cron.schedule('* * * * *', () => {
     console.log('running a task every minute');
   });
 
 // Start of routes
-
+app.get('/', (_, res) => {
+  res.status(200).send("News API")
+})
 
 // End of routes
 
