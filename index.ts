@@ -14,7 +14,7 @@ app.use(json())
 const port = process.env.PORT || 5000
 
 app.get('/', (_, res) => {
-  res.status(200).send()
+  res.status(200).send("News API")
 })
 
 cron.schedule('* * * * * *', () => {
